@@ -54,6 +54,7 @@ The package provides command line tools to test basic operations of mapnik
 %install
 %{__rm} -rf %{buildroot}
 %{__make} install DESTDIR=%{buildroot}
+cp -r deps/mapbox/variant/include/mapbox %{buildroot}/usr/include
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -73,6 +74,7 @@ The package provides command line tools to test basic operations of mapnik
 %defattr(-, root, root, 0755)
 %{_bindir}/mapnik-config
 %{_includedir}/mapnik
+%{_includedir}/mapbox
 %{_libdir}/libmapnik-json.a
 %{_libdir}/libmapnik-wkt.a
 #%{_libdir}/libmapnik.a
