@@ -12,7 +12,8 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gcc-c++ libicu52-devel harfbuzz-devel sqlite-devel
 BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
-#Requires: pango
+BuildRequires: proj-devel
+Requires: proj
 
 %description
 Mapnik is basically a collection of geographic objects
