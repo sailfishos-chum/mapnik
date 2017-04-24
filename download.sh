@@ -11,3 +11,6 @@ cd mapnik-$VERSION
 
 # https://github.com/mapnik/mapnik/issues/3384
 patch < ../mapnik.issue3384.patch
+
+# enable TWKB support (merged upstream for 3.1.x)
+patch -p 1 < ../mapnik.twkb.patch
