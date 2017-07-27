@@ -1,6 +1,6 @@
 Summary: Mapnik is an open source toolkit for developing mapping applications
 Name: mapnik
-Version: 3.0.13
+Version: 3.0.15
 Release: 1%{?dist}
 License: LGPL
 Group: Libraries/Geosciences
@@ -42,7 +42,7 @@ Requires: %{name} = %{version}
 The package provides command line tools to test basic operations of mapnik
 
 %prep
-%setup
+%setup -q -n %{name}-%{version}/mapnik
 
 %build
 %{__make} clean || true
@@ -62,7 +62,9 @@ cp -r deps/mapbox/variant/include/mapbox %{buildroot}/usr/include
 
 %pre
 
-%post
+%post -n mapnik -p /sbin/ldconfig
+
+%postun -n mapnik -p /sbin/ldconfig
 
 %files
 %files
