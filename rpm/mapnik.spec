@@ -7,6 +7,9 @@ Group: Libraries/Geosciences
 URL: mapnik.org
 
 Source: https://github.com/mapnik/mapnik/releases/download/v3.0.13/mapnik-v3.0.13.tar.bz2
+Patch0:     mapnik.issue3384.patch
+Patch1:     mapnik.twkb.patch
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: gcc-c++ libicu52-devel harfbuzz-devel sqlite-devel
@@ -43,6 +46,8 @@ The package provides command line tools to test basic operations of mapnik
 
 %prep
 %setup -q -n %{name}-%{version}/mapnik
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} clean || true
