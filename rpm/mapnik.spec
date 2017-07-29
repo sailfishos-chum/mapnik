@@ -6,7 +6,7 @@ License: LGPL
 Group: Libraries/Geosciences
 URL: mapnik.org
 
-Source: https://github.com/mapnik/mapnik/releases/download/v3.0.13/mapnik-v3.0.13.tar.bz2
+Source: %{name}-%{version}.tar.gz
 Patch0:     mapnik.issue3384.patch
 Patch1:     mapnik.twkb.patch
 
