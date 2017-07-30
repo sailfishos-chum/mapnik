@@ -31,6 +31,10 @@ exclusively, at web-based development.
 Summary: Mapnik development headers
 Group: Development/Libraries
 Requires: %{name} = %{version}
+Requires: libicu52-devel harfbuzz-devel sqlite-devel
+Requires: boost-devel freetype-devel
+Requires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
+Requires: proj-devel
 
 %description devel
 This package provides headers for development
