@@ -5,8 +5,6 @@ RPM packaging of Mapnik for Sailfish
 
 * Clone this repository
 
-* cd into it and run `./download.sh`
-
 * cd into source directory
 
 * build by running 

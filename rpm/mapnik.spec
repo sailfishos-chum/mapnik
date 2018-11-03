@@ -1,6 +1,6 @@
 Summary: Mapnik is an open source toolkit for developing mapping applications
 Name: mapnik
-Version: 3.0.15
+Version: 3.0.21
 Release: 1%{?dist}
 License: LGPL
 Group: Libraries/Geosciences
