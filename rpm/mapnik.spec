@@ -12,7 +12,8 @@ Patch1:     mapnik.twkb.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: gcc-c++ libicu52-devel harfbuzz-devel sqlite-devel
+BuildRequires: gcc-c++ harfbuzz-devel sqlite-devel
+BuildRequires: libicu52-devel or libicu-devel
 BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 BuildRequires: proj-devel
@@ -31,7 +32,8 @@ exclusively, at web-based development.
 Summary: Mapnik development headers
 Group: Development/Libraries
 Requires: %{name} = %{version}
-Requires: libicu52-devel harfbuzz-devel sqlite-devel
+Requires: harfbuzz-devel sqlite-devel
+Requires: libicu52-devel or libicu-devel
 Requires: boost-devel freetype-devel
 Requires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 Requires: proj-devel
