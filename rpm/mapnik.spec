@@ -13,7 +13,7 @@ Patch1:     mapnik.twkb.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: gcc-c++ harfbuzz-devel sqlite-devel
-%if %{_repository} == "sailfish_3.0.2.8_armv7hl"
+%if "%{_repository}" == "sailfish_3.0.2.8_armv7hl"
 BuildRequires: libicu52-devel
 %else
 BuildRequires: libicu-devel
@@ -37,7 +37,7 @@ Summary: Mapnik development headers
 Group: Development/Libraries
 Requires: %{name} = %{version}
 Requires: harfbuzz-devel sqlite-devel
-%if %{_repository} == "sailfish_3.0.2.8_armv7hl"
+%if "%{_repository}" == "sailfish_3.0.2.8_armv7hl"
 Requires: libicu52-devel
 %else
 Requires: libicu-devel
