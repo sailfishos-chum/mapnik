@@ -51,6 +51,8 @@ Requires: %{name} = %{version}
 The package provides command line tools to test basic operations of mapnik
 
 %prep
+%dump
+exit 1
 %setup -q -n %{name}-%{version}/mapnik
 %patch0 -p1
 %patch1 -p1
