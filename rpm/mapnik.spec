@@ -13,7 +13,11 @@ Patch1:     mapnik.twkb.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: gcc-c++ harfbuzz-devel sqlite-devel
+%if %{_repository} == "sailfish_3.0.2.8_armv7hl"
+BuildRequires: libicu52-devel
+%else
 BuildRequires: libicu-devel
+%endif
 BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 BuildRequires: proj-devel
@@ -33,7 +37,11 @@ Summary: Mapnik development headers
 Group: Development/Libraries
 Requires: %{name} = %{version}
 Requires: harfbuzz-devel sqlite-devel
+%if %{_repository} == "sailfish_3.0.2.8_armv7hl"
+Requires: libicu52-devel
+%else
 Requires: libicu-devel
+%endif
 Requires: boost-devel freetype-devel
 Requires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 Requires: proj-devel
@@ -51,8 +59,6 @@ Requires: %{name} = %{version}
 The package provides command line tools to test basic operations of mapnik
 
 %prep
-%dump
-exit 1
 %setup -q -n %{name}-%{version}/mapnik
 %patch0 -p1
 %patch1 -p1
