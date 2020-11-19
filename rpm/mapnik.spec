@@ -17,6 +17,7 @@ BuildRequires: pkgconfig(icu-uc)
 BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 BuildRequires: proj-devel
+BuildRequires: python(abi) >= 2.7, python(abi) < 3.0
 Requires: proj
 
 %description
@@ -59,6 +60,7 @@ The package provides command line tools to test basic operations of mapnik
 %{__make} clean || true
 %{__make} reset
 
+export PYTHON=python2
 %configure INPUT_PLUGINS="sqlite,shape" DESTDIR=%{buildroot} PREFIX="/usr" CUSTOM_CXXFLAGS="$CXXFLAGS -fPIC -g0" CUSTOM_CFLAGS="$CFLAGS -fPIC -g0" CUSTOM_LDFLAGS="$LDFLAGS" LINKING=shared OPTIMIZATION=2 CPP_TESTS=no CAIRO=no PLUGIN_LINKING=static MEMORY_MAPPED_FILE=no DEMO=no MAPNIK_INDEX=no MAPNIK_RENDER=no #ENABLE_STATS=True ENABLE_LOG=True 
 
 %{__make} %{?_smp_mflags}
@@ -77,7 +79,6 @@ cp -r deps/mapbox/variant/include/mapbox %{buildroot}/usr/include
 
 %postun -n mapnik -p /sbin/ldconfig
 
-%files
 %files
 %defattr(-, root, root, 0755)
 %{_libdir}/libmapnik.so*
