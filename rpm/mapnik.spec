@@ -92,7 +92,6 @@ cp -r deps/mapbox/variant/include/mapbox %{buildroot}/usr/include
 %{_includedir}/mapbox
 %{_libdir}/libmapnik-json.a
 %{_libdir}/libmapnik-wkt.a
-#%{_libdir}/libmapnik.a
 
 %files tools
 %defattr(-, root, root, 0755)

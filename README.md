@@ -3,17 +3,24 @@ RPM packaging of Mapnik for Sailfish
 
 ## Howto build
 
-* Clone this repository
+* Clone this repository into a directory of your choice ${PKGMAPNIK}
 
-* cd into source directory
-
-* build by running 
+* Change into directory where repository is:
 ```
-export SFARCH=armv7hl; mb2 -t SailfishOS-$SFARCH -s ../rpm/mapnik.spec build
+cd ${PKGMAPNIK}
 ```
-in MER SDK. 
 
-* RPMs are under RPMS directory.
+* Select your target (available in /srv/mer/targets) in MerSDK/SailfishSDK ${SFARCH}
+
+* Build by running the following in MerSDK/SailfishSDK:
+```
+mb2 -t ${SFARCH} -s rpm/mapnik.spec apply
+mb2 -t ${SFARCH} -s rpm/mapnik.spec build 
+```
+
+* RPMs will be created in RPMS directory, copy them elsewhere.
+
+* Repeat the `build` step for any other required targets. Note that `apply` is not required, or it will attempt to patch twice.
 
 Please let me know if there are some errors (missing dependencies, for
 example) during building by opening an issue for this repository.
