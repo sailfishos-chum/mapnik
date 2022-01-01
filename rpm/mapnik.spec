@@ -28,6 +28,11 @@ deployed to any server environment. It is intended to play fair in a
 multi-threaded environment and is aimed primarily, but not
 exclusively, at web-based development.
 
+Custom:
+  Repo: https://github.com/mapnik/mapnik
+Categories:
+  - Library
+  - Maps
 
 %package devel
 Summary: Mapnik development headers
@@ -42,6 +47,11 @@ Requires: proj-devel
 %description devel
 This package provides headers for development
 
+Custom:
+  Repo: https://github.com/mapnik/mapnik
+Categories:
+  - Library
+  - Maps
 
 %package tools
 Summary: Mapnik tools
@@ -50,6 +60,13 @@ Requires: %{name} = %{version}
 
 %description tools
 The package provides command line tools to test basic operations of mapnik
+
+Type: console-application
+Custom:
+  Repo: https://github.com/mapnik/mapnik
+Categories:
+  - Utility
+  - Maps
 
 %prep
 %setup -q -n %{name}-%{version}/mapnik
