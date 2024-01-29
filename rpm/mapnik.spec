@@ -18,6 +18,7 @@ BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
 BuildRequires: proj-devel
 BuildRequires: python(abi) >= 2.7, python(abi) < 3.0
+BuildRequires: boost-devel
 Requires: proj
 
 %description
