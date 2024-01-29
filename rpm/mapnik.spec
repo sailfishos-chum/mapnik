@@ -12,7 +12,7 @@ Patch1:     mapnik.twkb.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: gcc-c++ harfbuzz-devel sqlite-devel
+BuildRequires: gcc-c++ pkgconfig(harfbuzz) pkgconfig(sqlite3)
 BuildRequires: pkgconfig(icu-uc)
 BuildRequires: boost-devel freetype-devel
 BuildRequires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
@@ -39,9 +39,9 @@ Summary: Mapnik development headers
 Group: Development/Libraries
 Requires: %{name} = %{version}
 Requires: pkgconfig(icu-uc)
-Requires: harfbuzz-devel sqlite-devel
-Requires: boost-devel freetype-devel
-Requires: libxml2-devel libjpeg-turbo-devel libpng-devel libtiff-devel cairo-devel
+Requires: pkgconfig(harfbuzz) pkgconfig(sqlite3)
+Requires: boost-devel pkgconfig(freetype2)
+Requires: pkgconfig(libxml-2.0) pkgconfig(libjpeg) pkgconfig(libpng) pkgconfig(libtiff-4) pkgconfig(cairo-gobject)
 Requires: proj-devel
 
 %description devel
