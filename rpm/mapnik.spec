@@ -1,6 +1,6 @@
 Summary: Mapnik is an open source toolkit for developing mapping applications
 Name: mapnik
-Version: 3.0.21
+Version: 3.1.0
 Release: 1%{?dist}
 License: LGPL
 Group: Libraries/Geosciences
@@ -78,8 +78,26 @@ Categories:
 %{__make} clean || true
 %{__make} reset
 
-export PYTHON=python2
-%configure INPUT_PLUGINS="sqlite,shape" DESTDIR=%{buildroot} PREFIX=%{_prefix} LIBDIR_SCHEMA=%{_lib} CUSTOM_CXXFLAGS="$CXXFLAGS -fPIC -g0" CUSTOM_CFLAGS="$CFLAGS -fPIC -g0" CUSTOM_LDFLAGS="$LDFLAGS" LINKING=shared OPTIMIZATION=2 CPP_TESTS=no CAIRO=no PLUGIN_LINKING=static MEMORY_MAPPED_FILE=no DEMO=no MAPNIK_INDEX=no MAPNIK_RENDER=no #ENABLE_STATS=True ENABLE_LOG=True
+%configure INPUT_PLUGINS="sqlite,shape" \
+           DESTDIR=%{buildroot} \
+           PREFIX=%{_prefix} \
+           LIBDIR_SCHEMA=%{_lib} \
+           CUSTOM_CXXFLAGS="$CXXFLAGS -fPIC -g0" \
+           CUSTOM_CFLAGS="$CFLAGS -fPIC -g0" \
+           CUSTOM_LDFLAGS="$LDFLAGS" \
+           LINKING=shared \
+           OPTIMIZATION=2 \
+           CPP_TESTS=no \
+           CAIRO=no \
+           PLUGIN_LINKING=shared \
+           MEMORY_MAPPED_FILE=no \
+           DEMO=no \ MAPNIK_INDEX=no \
+           MAPNIK_RENDER=no \
+           CUSTOM_DEFINES="-DBOOST_PHOENIX_STL_TUPLE_H_"
+           # ^ Workaround
+           # https://github.com/mapnik/mapnik/issues/4375#issuecomment-1386786829
+           #ENABLE_STATS=True ENABLE_LOG=True
+
 
 %{__make} %{?_smp_mflags}
 
@@ -114,6 +132,7 @@ cp -r deps/mapbox/variant/include/mapbox %{buildroot}/usr/include
 %files tools
 %defattr(-, root, root, 0755)
 %{_bindir}/shapeindex
+%{_bindir}/mapnik-index
 
 %changelog
 * Mon Apr 3 2017 rinigus <rinigus.git@gmail.com> - 3.0.13-1
