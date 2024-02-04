@@ -42,7 +42,8 @@ Requires: %{name} = %{version}
 Requires: pkgconfig(icu-uc)
 Requires: pkgconfig(harfbuzz) pkgconfig(sqlite3)
 Requires: boost-devel pkgconfig(freetype2)
-Requires: pkgconfig(libxml-2.0) pkgconfig(libjpeg) pkgconfig(libpng) pkgconfig(libtiff-4) pkgconfig(cairo-gobject)
+Requires: pkgconfig(libxml-2.0) pkgconfig(libjpeg) pkgconfig(libpng) pkgconfig(libtiff-4)
+Requires: cairo-devel
 Requires: proj-devel
 
 %description devel
